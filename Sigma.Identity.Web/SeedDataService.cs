@@ -99,16 +99,16 @@ namespace Sigma.Identity.Web
 
             }
             
-            if (!_configurationDbContext.ApiResources.Any())
+            if (!_configurationDbContext.ApiScopes.Any())
             {
-                Log.Information("Adding ApiResources...");
-                foreach (var resource in Config.GetApiResources())
+                Log.Information("Adding ApiScopes...");
+                foreach (var resource in Config.GetApiScope())
                 {
-                    _configurationDbContext.ApiResources.Add(resource.ToEntity());
+                    _configurationDbContext.ApiScopes.Add(resource.ToEntity());
                 }
                 _configurationDbContext.SaveChanges();
                 
-                Log.Information("ApiResources added");
+                Log.Information("ApiScopes added");
 
             }
         }

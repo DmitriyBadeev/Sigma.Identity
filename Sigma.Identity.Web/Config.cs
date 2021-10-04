@@ -15,12 +15,12 @@ namespace Sigma.Identity.Web
             };
         }
 
-        public static IEnumerable<ApiResource> GetApiResources()
+        public static IEnumerable<ApiScope> GetApiScope()
         {
-            return new List<ApiResource>
+            return new List<ApiScope>
             {
-                new ApiResource("Sigma.Api"),
-                new ApiResource(IdentityServerConstants.LocalApi.ScopeName)
+                new ApiScope("Sigma.Api"),
+                new ApiScope(IdentityServerConstants.LocalApi.ScopeName)
             };
         }
         
