@@ -109,7 +109,18 @@ namespace Sigma.Identity.Web
                 _configurationDbContext.SaveChanges();
                 
                 Log.Information("ApiScopes added");
-
+            }
+            
+            if (!_configurationDbContext.ApiResources.Any())
+            {
+                Log.Information("Adding ApiResources...");
+                foreach (var resource in Config.GetApiResource())
+                {
+                    _configurationDbContext.ApiResources.Add(resource.ToEntity());
+                }
+                _configurationDbContext.SaveChanges();
+                
+                Log.Information("ApiResources added");
             }
         }
     }

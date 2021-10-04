@@ -14,6 +14,14 @@ namespace Sigma.Identity.Web
                 new IdentityResources.Profile(),
             };
         }
+        public static IEnumerable<ApiResource> GetApiResource()
+        {
+            return new List<ApiResource>
+            {
+                new ApiResource("Sigma.Api"),
+                new ApiResource(IdentityServerConstants.LocalApi.ScopeName)
+            };
+        }
 
         public static IEnumerable<ApiScope> GetApiScope()
         {
