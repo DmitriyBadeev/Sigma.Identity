@@ -71,7 +71,7 @@ namespace Sigma.Identity.Web
                         IdentityServerConstants.StandardScopes.OpenId, 
                         IdentityServerConstants.StandardScopes.Profile,
                         IdentityServerConstants.LocalApi.ScopeName,
-                        "Sigma.Api"
+                        "Sigma.Api.All"
                     }
                 }
             };
