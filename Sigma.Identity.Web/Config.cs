@@ -18,7 +18,10 @@ namespace Sigma.Identity.Web
         {
             return new List<ApiResource>
             {
-                new ApiResource("Sigma.Api"),
+                new ApiResource("Sigma.Api")
+                {
+                    Scopes = { "Sigma.Api.All" }
+                },
                 new ApiResource(IdentityServerConstants.LocalApi.ScopeName)
             };
         }
@@ -27,7 +30,7 @@ namespace Sigma.Identity.Web
         {
             return new List<ApiScope>
             {
-                new ApiScope("Sigma.Api"),
+                new ApiScope("Sigma.Api.All"),
                 new ApiScope(IdentityServerConstants.LocalApi.ScopeName)
             };
         }
