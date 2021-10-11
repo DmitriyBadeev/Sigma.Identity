@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System;
+using System.Reflection;
 using IdentityServer4;
 using Sigma.Identity.Web.Data;
 using Sigma.Identity.Web.Models;
@@ -69,8 +70,9 @@ namespace Sigma.Identity.Web
                 })
                 .AddAspNetIdentity<ApplicationUser>();
 
-            // not recommended for production - you need to store your key material somewhere secure
-            builder.AddDeveloperSigningCredential();
+            var rsa = new RsaKeyService(Environment, TimeSpan.FromDays(1200));
+            services.AddSingleton(provider => rsa);
+            builder.AddSigningCredential(rsa.GetKey(), IdentityServerConstants.RsaSigningAlgorithm.RS512);
 
             services.AddAuthentication()
                 .AddGoogle(options =>

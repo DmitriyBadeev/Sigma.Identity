@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Linq;
-using System.Security.Claims;
-using IdentityModel;
 using IdentityServer4.EntityFramework.DbContexts;
 using IdentityServer4.EntityFramework.Mappers;
 using Sigma.Identity.Web.Data;
