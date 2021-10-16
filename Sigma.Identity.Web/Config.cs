@@ -54,17 +54,17 @@ namespace Sigma.Identity.Web
                     { 
                         "http://localhost:3000", 
                         "http://localhost:3001",
-                        "https://sigma-frontend.herokuapp.com"
+                        "http://sigma-frontend.herokuapp.com"
                     },
                     PostLogoutRedirectUris = new List<string> 
                     {
                         "http://localhost:3000/signout",
-                        "https://sigma-frontend.herokuapp.com/signout"
+                        "http://sigma-frontend.herokuapp.com/signout"
                     },
                     RedirectUris = new List<string>
                     {
                         "http://localhost:3000/auth-complete",
-                        "https://sigma-frontend.herokuapp.com/auth-complete"
+                        "http://sigma-frontend.herokuapp.com/auth-complete"
                     },
                     AllowedScopes = 
                     { 
