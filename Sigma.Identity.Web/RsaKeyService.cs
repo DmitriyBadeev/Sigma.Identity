@@ -26,7 +26,7 @@ namespace Sigma.Identity.Web
         {
             get
             {
-                return Path.Combine(_environment.ContentRootPath, "rsakey.json");
+                return Path.Combine(_environment.WebRootPath, "rsakey.json");
             }
         }
         private readonly IWebHostEnvironment _environment;

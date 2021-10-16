@@ -70,7 +70,7 @@ namespace Sigma.Identity.Web
                 })
                 .AddAspNetIdentity<ApplicationUser>();
 
-            var rsa = new RsaKeyService(Environment, TimeSpan.FromDays(1200));
+            var rsa = new RsaKeyService(Environment, TimeSpan.FromDays(365));
             services.AddSingleton(provider => rsa);
             builder.AddSigningCredential(rsa.GetKey(), IdentityServerConstants.RsaSigningAlgorithm.RS512);
 
