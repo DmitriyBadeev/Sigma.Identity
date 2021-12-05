@@ -80,6 +80,7 @@ namespace Sigma.Identity.Web
                     options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
                     options.ClientId = Configuration["google_client_id"];
                     options.ClientSecret = Configuration["google_secret"];
+                    options.CallbackPath = "/signin-google";
                 });
 
             services.AddScoped<SeedDataService>();
